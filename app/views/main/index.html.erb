@@ -2,7 +2,14 @@
   <h1>WeeklyBook</h1>
   <ul class="nav nav-pills">
     <li class=nav-item>
-      <a class="nav-link active" href="#">Log-in</a>
+      <%= link_to 'Add user', new_user_path,  { remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary btn-lg'} %>
+      <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div id="modal-content" class="modal-content"></div>
+        </div>
+      </div>
+    </li>
+</div>
     </li>
     <li class=nav-item>
       <a class="nav-link" href="#">Sign-Up</a>
