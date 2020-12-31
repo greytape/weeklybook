@@ -2,15 +2,17 @@
   <div class="form-group">
     <%= form.label :full_name %>
     <%= form.text_field :full_name, { class: "form-control" }%>
-    <small class="form-text text-muted">We'll never share you email with anyone else</small>
   </div>
   <div class="form-group">
     <%= form.label :email %>
     <%= form.email_field :email, { class: "form-control" }%>
+    <small class="form-text text-muted">We'll never share you email with anyone else</small>
   </div>
   <div class="form-group">
     <%= form.label :password %>
-    <%= form.email_field :password, { class: "form-control" }%>
+    <%= form.password_field :password, { class: "form-control" }%>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, { class: "form-control" }%>
   </div>
   <%= form.submit "Join Us", { class: "btn btn-primary" } %>
 <% end %>

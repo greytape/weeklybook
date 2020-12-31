@@ -6,13 +6,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.new(user_params)
+    User.new(user_params).save!
+    redirect_to '/'
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :first_name, :last_name)
+    params.require(:user).permit(:email, :password, :password_confirmation,:first_name, :last_name)
   end
 
   def split_user_name
