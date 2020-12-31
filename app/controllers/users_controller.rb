@@ -6,8 +6,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.new(user_params).save!
-    redirect_to '/'
+    @user = User.new(user_params)
+    if @user.save
+      flash[:success] = "Welcome to weeklybook #{@user.first_name}"
+      redirect_to '/'
+    end
   end
 
   private
