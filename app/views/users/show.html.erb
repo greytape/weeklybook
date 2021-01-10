@@ -7,6 +7,7 @@
         <% current_user.groups.each do |group| %>
           <li><%= group.name %></li>
         <% end%>
+        <a class="btn btn-primary" href=<%= new_group_path %> role="button">Create Group</a>
       </ul>
       <h3>Events</h3>
     </div>
