@@ -3,6 +3,11 @@
     <div class="col-6 border p-3 mt-5">
       <h2><%= "#{current_user.full_name}" %></h2>
       <h3>Groups</h3>
+      <ul>
+        <% current_user.groups.each do |group| %>
+          <li><%= group.name %></li>
+        <% end%>
+      </ul>
       <h3>Events</h3>
     </div>
   </div>
