@@ -4,6 +4,10 @@ class GroupsController < ApplicationController
     @group.users << current_user
   end
 
+  def show
+    @group = Group.find_by(id: params[:id])
+  end
+
   def create
     @group = Group.new(group_params)
     @group.save
