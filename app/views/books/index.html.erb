@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-6 border p-3 mt-5">
+      <h2>Books</h2>
+      <ul>
+        <% Book.all.each do |book| %>
+          <li><%= book.title %> - <a href=<%= "/groups/#{@current_group.id}/books/#{book.id}/link_book" %>>Add Book to Group</a></li>
+        <% end%>
+        <a class="btn btn-primary" href=<%= new_book_path %> role="button">Create Book</a>
+      </ul>
+      <h3>Events</h3>
+    </div>
+  </div>
+</div>

@@ -3,7 +3,7 @@
     <div class="col-6 border p-3 mt-5">
       <h2><%= "#{@group.name}" %></h2>
       <h3>Current Book</h3>
-        <p>Insert name of book here</p>
+        <a class="btn btn-primary" href=<%= books_path(group_id: @group.id) %> role="button">Add Book to Group</a>
       <h3>Users</h3>
       <ul>
         <% @group.users.each do |user| %>
