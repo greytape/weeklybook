@@ -5,7 +5,7 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.create(book_params)
-    redirect_back(fallback_location: books_url)
+    redirect_to 'books#index'
   end
 
   def index

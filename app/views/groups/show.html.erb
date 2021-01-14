@@ -2,7 +2,10 @@
   <div class="row justify-content-md-center">
     <div class="col-6 border p-3 mt-5">
       <h2><%= "#{@group.name}" %></h2>
-      <h3>Current Book</h3>
+      <h3>Book</h3>
+        <% @group.books.each do |book| %>
+          <li><%= book.title %></li>
+        <% end %>
         <a class="btn btn-primary" href=<%= books_path(group_id: @group.id) %> role="button">Add Book to Group</a>
       <h3>Users</h3>
       <ul>
