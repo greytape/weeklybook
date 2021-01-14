@@ -15,5 +15,6 @@ Rails.application.routes.draw do
       get 'link_book'
     end
   end
+  resources :books_groups
   resources :books
 end

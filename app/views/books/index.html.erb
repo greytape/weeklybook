@@ -4,7 +4,7 @@
       <h2>Books</h2>
       <ul>
         <% Book.all.each do |book| %>
-          <li><%= book.title %> - <a href=<%= "/groups/#{@current_group.id}/books/#{book.id}/link_book" %>>Add Book to Group</a></li>
+          <li><%= book.title %> - <%= link_to 'Add Book to Group', new_books_group_path(group_id: @current_group.id, book_id: book.id)%></li>
         <% end%>
         <a class="btn btn-primary" href=<%= new_book_path %> role="button">Create Book</a>
       </ul>
