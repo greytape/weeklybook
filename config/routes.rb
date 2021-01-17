@@ -11,10 +11,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :groups do
-    resources :books do
-      get 'link_book'
-    end
+    resources :books_groups
   end
-  resources :books_groups
   resources :books
 end

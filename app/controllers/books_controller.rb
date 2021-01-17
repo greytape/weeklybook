@@ -5,11 +5,10 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.create(book_params)
-    redirect_to 'books#index'
+    render 'books/index'
   end
 
   def index
-    @current_group = Group.find_by(id: params[:group_id])
   end
 
   def show

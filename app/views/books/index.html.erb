@@ -4,9 +4,11 @@
       <h2>Books</h2>
       <ul>
         <% Book.all.each do |book| %>
-          <li><%= book.title %> - <%= link_to 'Add Book to Group', new_books_group_path(group_id: @current_group.id, book_id: book.id)%></li>
+          <li><%= book.title %> - <%= link_to "Add Book to #{current_group.name}",
+              edit_group_books_group_path(current_group, book),
+              { class: "btn-sm", role: 'button' } %></li>
         <% end%>
-        <a class="btn btn-primary" href=<%= new_book_path %> role="button">Create Book</a>
+          <a class="btn btn-primary" href=<%= new_book_path %> role="button">Create Book</a>
       </ul>
       <h3>Events</h3>
     </div>
