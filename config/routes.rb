@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users
   resources :groups do
     resources :books_groups
+    resources :events
   end
   resources :books
 end
