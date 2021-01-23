@@ -6,8 +6,10 @@
         <div class="form-group">
           <%= form.label :date_time %>
           <%= form.datetime_local_field :date_time, { class: "form-control" } %>
+          <%= form.label :book_title, "Choose a book:" %>
+          <%= form.select :book_title, @group.books.map(&:title), {}, class: 'custom-select' %>
         </div>
-        <%= form.submit "Create Book", { class: "btn btn-primary" } %>
+        <%= form.submit "Create Event", { class: "btn btn-primary" } %>
       <% end %>
     </div>
   </div>

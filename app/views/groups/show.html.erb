@@ -16,7 +16,7 @@
       <h3>Events</h3>
       <ul>
         <% @group.events.each do |event| %>
-          <li><%= event.date_time %></li>
+          <li><%= event.date_time %> - <%= event&.book&.title %></li>
         <% end%>
       </ul>
       <a class="btn btn-primary" href=<%= new_group_event_path(@group) %> role="button">Create New Event</a>
