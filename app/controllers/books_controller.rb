@@ -1,14 +1,16 @@
 class BooksController < ApplicationController
   def new
     @book = Book.new
+    @current_group = current_group
   end
 
   def create
     @book = Book.create(book_params)
-    render 'books/index'
+    redirect_to books_url(group_id: current_group.id)
   end
 
   def index
+    @current_group = current_group
   end
 
   def show

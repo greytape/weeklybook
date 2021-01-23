@@ -1,16 +1,15 @@
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col-6 border p-3 mt-5">
-      <h2>Books</h2>
+      <h2>All Books</h2>
       <ul>
         <% Book.all.each do |book| %>
-          <li><%= book.title %> - <%= link_to "Add Book to #{current_group.name}",
-              edit_group_books_group_path(current_group, book),
+          <li><%= book.title %> - <%= link_to "Add Book to #{@current_group.name}",
+              edit_group_books_group_path(@current_group, book),
               { class: "btn-sm", role: 'button' } %></li>
         <% end%>
-          <a class="btn btn-primary" href=<%= new_book_path %> role="button">Create Book</a>
+          <a class="btn btn-primary" href=<%= new_book_path(group_id: @current_group.id) %> role="button">Create Book</a>
       </ul>
-      <h3>Events</h3>
     </div>
   </div>
 </div>
