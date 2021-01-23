@@ -5,18 +5,13 @@ class EventsController < ApplicationController
   end
 
   def create
-    event = Event.new(group: current_group, date_time: parsed_date_time, meeting_url: meeting_url)
+    event = Event.new(group: current_group, date_time: parsed_date_time, meeting_url: meeting_url, book: book)
     event.save!
-    byebug
-    render current_group
+    redirect_to current_group
   end
 
   def event_params
     params.require(:event).permit(:date_time)
-  end
-
-  def current_group
-    Group.find_by(id: params[:group_id])
   end
 
   def parsed_date_time
@@ -25,5 +20,9 @@ class EventsController < ApplicationController
 
   def meeting_url
     'http://www.example.comw'
+  end
+
+  def book
+    Book.find_by(title: params.dig(:event, :book_title))
   end
 end
