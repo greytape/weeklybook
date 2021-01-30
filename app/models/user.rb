@@ -7,4 +7,8 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def administrator?(group)
+    GroupsUser.where(user: self, group: group, role: 'administrator').present?
+  end
 end
