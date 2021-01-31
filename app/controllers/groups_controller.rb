@@ -15,6 +15,12 @@ class GroupsController < ApplicationController
     redirect_to current_user
   end
 
+  def admin
+    @group = Group.find_by(id: params[:id])
+  end
+
+  private
+
   def group_params
     params.require(:group).permit(:name)
   end
