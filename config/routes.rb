@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :groups do
     resources :books_groups
     resources :events
+    resources :decisions
+    get 'admin', on: :member
   end
   resources :books
 end
