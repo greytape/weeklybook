@@ -7,5 +7,7 @@ class Group < ApplicationRecord
   has_many :books_groups
   has_many :books, through: :books_groups
 
+  has_many :decisions
+
   has_many :events
 end
