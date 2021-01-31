@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-6 border p-3 mt-5">
+      <h2><%= "#{@group.name}" %> Administration</h2>
+      <h3>Users</h3>
+      <ul>
+        <% @group.users.each do |user| %>
+          <li><%= user.full_name %></li>
+        <% end%>
+      </ul>
+      <h3>Events</h3>
+      <ul>
+        <% @group.events.each do |event| %>
+          <li><%= event.date_time %> - <%= event&.book&.title %></li>
+        <% end%>
+      </ul>
+      <a class="btn btn-primary" href=<%= new_group_event_path(@group) %> role="button">Create New Event</a>
+      <h3>Decisions</h3>
+      <a class="btn btn-primary" href=<%= group_decision_path(@group) %> role="button">Create New Decision</a>
+    </div>
+  </div>
+</div>
