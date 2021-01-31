@@ -20,6 +20,9 @@
         <% end%>
       </ul>
       <a class="btn btn-primary" href=<%= new_group_event_path(@group) %> role="button">Create New Event</a>
+      <% if current_user.administrator?(@group) %>
+        <a class="btn btn-secondary" href=<%= admin_group_path(@group) %> role="button">Group Settings</a>
+      <% end %>
     </div>
   </div>
 </div>
