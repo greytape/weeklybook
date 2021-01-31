@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-6 border p-3 mt-5">
+      <h2>Create New Decision</h2>
+      <%= form_with model: @decision, url: new_group_decision_path do |form| %>
+        <div class="form-group">
+          <%= form.label :decision_type, "What type of decision is this?" %>
+          <%= select_tag :decision_type, options_for_select(decision_types), class: 'custom-select' %>
+        </div>
+        <%= form.submit "Create Decision", { class: "btn btn-primary" } %>
+      <% end %>
+    </div>
+  </div>
+</div>
