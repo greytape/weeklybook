@@ -17,4 +17,5 @@ Rails.application.routes.draw do
     get 'admin', on: :member
   end
   resources :books
+  resources :book_search
 end

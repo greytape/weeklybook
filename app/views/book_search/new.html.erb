@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-6 border p-3 mt-5">
+      <h2>Choose Book</h2>
+      <%= form_with url: '/book_search', method: :get, local: true do |form| %>
+        <div class="form-group">
+          <%= form.label :title_query, "Search For Title" %>
+          <%= form.text_field :title_query, { class: "form-control" }%>
+        </div>
+        <%= form.submit "Search for Book", { class: "btn btn-primary" } %>
+      <% end %>
+    </div>
+  </div>
+</div>
